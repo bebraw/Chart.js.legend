@@ -1,0 +1,20 @@
+.legend {
+    width: 7em;
+
+    border: 1px solid black;
+}
+
+.legend .color {
+    width: 1em;
+    height: 1em;
+
+    float: left;
+}
+
+.legend .title {
+    margin-left: 0.5em;
+}
+
+.legend .container {
+    margin: 0.5em;
+}
