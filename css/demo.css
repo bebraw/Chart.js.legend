@@ -1,6 +1,13 @@
+#fork {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
 .legend {
-  width: 10em;
-  border: 1px solid black;
+    width: 10em;
+    border: 1px solid black;
 }
 
 .legend .title {
