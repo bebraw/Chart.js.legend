@@ -6,6 +6,7 @@ function legend(parent, data) {
         var title = document.createElement('span');
         title.className = 'title';
         title.style.borderColor = d.hasOwnProperty('strokeColor') ? d.strokeColor : d.color;
+        title.style.borderStyle = 'solid';
         parent.appendChild(title);
 
         var text = document.createTextNode(d.title);
