@@ -33,6 +33,9 @@ function lineChart() {
     new Chart(ctx).Line(data);
 
     legend(document.getElementById("lineLegend"), data);
+
+    // testing adding twice (should get same result)
+    legend(document.getElementById("lineLegend"), data);
 }
 
 function pieChart() {
