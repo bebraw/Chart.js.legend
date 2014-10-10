@@ -6,15 +6,13 @@ Simply `legend(parent, data)`. See `demo.js` for a full example.
 
 ## Quick example
 
-```js
+```html
 <div id="placeholder"></div>
+```
 
-<script>
-
+```js
 var data = ...;  // refers to the charts data
 legend(document.getElementById('placeholder'), data);
-
-</script>
 ```
 
 ## Contributors
