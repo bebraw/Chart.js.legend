@@ -14,7 +14,7 @@ function legend(parent, data) {
         title.style.borderStyle = 'solid';
         parent.appendChild(title);
 
-        var text = document.createTextNode(d.title);
+        var text = document.createTextNode(d.label);
         title.appendChild(text);
     });
 }

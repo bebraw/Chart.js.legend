@@ -16,7 +16,7 @@ function lineChart() {
             pointColor : "rgba(220,220,220,1)",
             pointStrokeColor : "#fff",
             data : [65,59,90,81,56,55,40],
-            title : 'Tigers'
+            label : 'Tigers'
         },
         {
             fillColor : "rgba(151,187,205,0.5)",
@@ -24,7 +24,7 @@ function lineChart() {
             pointColor : "rgba(151,187,205,1)",
             pointStrokeColor : "#fff",
             data : [28,48,40,19,96,27,100],
-            title : 'Bears'
+            label : 'Bears'
         }
         ]
     };
@@ -43,17 +43,17 @@ function pieChart() {
         {
             value: 30,
             color:"#F38630",
-            title: 'Bears'
+            label: 'Bears'
         },
         {
             value : 50,
             color : "#E0E4CC",
-            title: 'Lynxes'
+            label: 'Lynxes'
         },
         {
             value : 100,
             color : "#69D2E7",
-            title: 'Reindeer'
+            label: 'Reindeer'
         }
     ];
 
