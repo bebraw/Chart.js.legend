@@ -13,9 +13,7 @@
 .legend .title {
     display: block;
     margin-bottom: 0.5em;
-    line-height: 120%;
-    border-style: solid;
-    border-width: 0 0 0 1em;
+    line-height: 1.2em;
     padding: 0 0.3em;
 }
 
