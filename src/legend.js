@@ -10,9 +10,13 @@ function legend(parent, data) {
     datas.forEach(function(d) {
         var title = document.createElement('span');
         title.className = 'title';
-        title.style.borderColor = d.hasOwnProperty('strokeColor') ? d.strokeColor : d.color;
-        title.style.borderStyle = 'solid';
         parent.appendChild(title);
+
+        var chip = document.createElement('div');
+        chip.className = 'chip';
+        chip.style.backgroundColor = d.hasOwnProperty('strokeColor') ? d.strokeColor : d.color;
+        chip.style.borderColor = d.hasOwnProperty('fillColor') ? d.fillColor : d.color;
+        title.appendChild(chip);
 
         var text = document.createTextNode(d.label);
         title.appendChild(text);
