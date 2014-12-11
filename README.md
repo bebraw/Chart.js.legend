@@ -20,6 +20,7 @@ legend(document.getElementById('placeholder'), data);
 * [Laurent Goussard](https://github.com/loranger) - Simplified markup, support for pie etc.
 * [yousifucv](https://github.com/yousifucv) - Make CSS border work properly
 * [KuenzelIT](https://github.com/KuenzelIT) - Update to support new Chart.js syntax and add example
+* [Antonin Bourguignon](https://github.com/abourguignon) - Make it easier to customize legend color samples
 
 ## License
 
