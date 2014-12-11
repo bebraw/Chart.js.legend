@@ -12,11 +12,11 @@ function legend(parent, data) {
         title.className = 'title';
         parent.appendChild(title);
 
-        var chip = document.createElement('div');
-        chip.className = 'chip';
-        chip.style.backgroundColor = d.hasOwnProperty('strokeColor') ? d.strokeColor : d.color;
-        chip.style.borderColor = d.hasOwnProperty('fillColor') ? d.fillColor : d.color;
-        title.appendChild(chip);
+        var colorSample = document.createElement('div');
+        colorSample.className = 'color-sample';
+        colorSample.style.backgroundColor = d.hasOwnProperty('strokeColor') ? d.strokeColor : d.color;
+        colorSample.style.borderColor = d.hasOwnProperty('fillColor') ? d.fillColor : d.color;
+        title.appendChild(colorSample);
 
         var text = document.createTextNode(d.label);
         title.appendChild(text);

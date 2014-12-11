@@ -17,12 +17,12 @@
     padding: 0 0.3em;
 }
 
-.legend .chip {
+.legend .color-sample {
     display: block;
     float: left;
     width: 1em;
     height: 1em;
-    border: 2px solid;
-    border-radius: 0.5em;
+    border: 2px solid; /* Comment out if you don't want to show the fillColor */
+    border-radius: 0.5em; /* Comment out if you prefer squarish samples */
     margin-right: 0.5em;
 }
