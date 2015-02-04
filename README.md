@@ -4,6 +4,8 @@ An implementation of legend widget for [Chart.js](https://github.com/nnnick/Char
 
 Simply `legend(parent, data)`. See `demo.js` for a full example.
 
+If you need to support older browsers (IE8 and such), use `src/legend.legacy.js`. Otherwise you can stick with `src/legend.js`.
+
 ## Quick example
 
 ```html
@@ -21,6 +23,7 @@ legend(document.getElementById('placeholder'), data);
 * [yousifucv](https://github.com/yousifucv) - Make CSS border work properly
 * [KuenzelIT](https://github.com/KuenzelIT) - Update to support new Chart.js syntax and add example
 * [Antonin Bourguignon](https://github.com/abourguignon) - Make it easier to customize legend color samples
+* [Xu Ding](https://github.com/duskast) - IE8 and lower compatible version (`legend.legacy.js`)
 
 ## License
 
