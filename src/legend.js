@@ -2,7 +2,7 @@ function legend(parent, data) {
     legend(parent, data, null);
 }
 
-function legend(parent, data, chart){
+function legend(parent, data, chart) {
     parent.className = 'legend';
     var datas = data.hasOwnProperty('datasets') ? data.datasets : data;
 
@@ -11,9 +11,8 @@ function legend(parent, data, chart){
         parent.removeChild(parent.lastChild);
     }
 
-    var indexChartSegment = 0;
-
-    datas.forEach(function(d) {
+    var show = chart ? showTooltip : noop;
+    datas.forEach(function(d, i) {
         //span to div: legend appears to all element (color-sample and text-node)
         var title = document.createElement('div');
         title.className = 'title';
@@ -28,10 +27,8 @@ function legend(parent, data, chart){
         var text = document.createTextNode(d.label);
         text.className = 'text-node';
         title.appendChild(text);
-        
-        if(chart != null){
-            showTooltip(chart, title, indexChartSegment++);
-        }        
+
+        show(chart, title, i);
     });
 }
 
@@ -42,7 +39,7 @@ function showTooltip(chart, elem, indexChartSegment){
     var segments = chart.segments;
     //Only chart with segments
     if(typeof segments != 'undefined'){
-        helpers.addEvent(elem, 'mouseover', function(){ 
+        helpers.addEvent(elem, 'mouseover', function(){
             var segment = segments[indexChartSegment];
             segment.save();
             segment.fillColor = segment.highlightColor;
@@ -52,6 +49,8 @@ function showTooltip(chart, elem, indexChartSegment){
 
         helpers.addEvent(elem, 'mouseout', function(){
             chart.draw();
-        });  
+        });
     }
 }
+
+function noop() {}

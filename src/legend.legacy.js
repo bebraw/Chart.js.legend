@@ -1,4 +1,4 @@
-function legend(parent, orig_data) {
+function legend(parent, orig_data, chart) {
     parent.className = 'legend';
     var data = orig_data.hasOwnProperty('datasets') ? orig_data.datasets : orig_data;
 
@@ -6,8 +6,10 @@ function legend(parent, orig_data) {
         parent.removeChild(parent.lastChild);
     }
 
+    var index = 0;
+    var show = chart ? showTooltip : noop;
     for (var i in data) {
-        d = data[i];
+        var d = data[i];
         var title = document.createElement('span');
         title.className = 'title';
         parent.appendChild(title);
@@ -20,6 +22,10 @@ function legend(parent, orig_data) {
 
         var text = document.createTextNode(d.label);
         title.appendChild(text);
+
+        show(chart, title, index);
+
+        index++;
     }
 }
 
@@ -39,3 +45,26 @@ function colorToHex(color) {
     else
         return color;
 }
+
+//add events to legend that show tool tips on chart
+function showTooltip(chart, elem, indexChartSegment){
+    var helpers = Chart.helpers;
+
+    var segments = chart.segments;
+    //Only chart with segments
+    if(typeof segments != 'undefined'){
+        helpers.addEvent(elem, 'mouseover', function(){
+            var segment = segments[indexChartSegment];
+            segment.save();
+            segment.fillColor = segment.highlightColor;
+            chart.showTooltip([segment]);
+            segment.restore();
+        });
+
+        helpers.addEvent(elem, 'mouseout', function(){
+            chart.draw();
+        });
+    }
+}
+
+function noop() {}
