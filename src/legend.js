@@ -1,4 +1,8 @@
 function legend(parent, data) {
+    legend(parent, data, null);
+}
+
+function legend(parent, data, chart){
     parent.className = 'legend';
     var datas = data.hasOwnProperty('datasets') ? data.datasets : data;
 
@@ -7,8 +11,11 @@ function legend(parent, data) {
         parent.removeChild(parent.lastChild);
     }
 
+    var indexChartSegment = 0;
+
     datas.forEach(function(d) {
-        var title = document.createElement('span');
+        //span to div: legend appears to all element (color-sample and text-node)
+        var title = document.createElement('div');
         title.className = 'title';
         parent.appendChild(title);
 
@@ -19,6 +26,32 @@ function legend(parent, data) {
         title.appendChild(colorSample);
 
         var text = document.createTextNode(d.label);
+        text.className = 'text-node';
         title.appendChild(text);
+        
+        if(chart != null){
+            showTooltip(chart, title, indexChartSegment++);
+        }        
     });
+}
+
+//add events to legend that show tool tips on chart
+function showTooltip(chart, elem, indexChartSegment){
+    var helpers = Chart.helpers;
+
+    var segments = chart.segments;
+    //Only chart with segments
+    if(typeof segments != 'undefined'){
+        helpers.addEvent(elem, 'mouseover', function(){ 
+            var segment = segments[indexChartSegment];
+            segment.save();
+            segment.fillColor = segment.highlightColor;
+            chart.showTooltip([segment]);
+            segment.restore();
+        });
+
+        helpers.addEvent(elem, 'mouseout', function(){
+            chart.draw();
+        });  
+    }
 }
