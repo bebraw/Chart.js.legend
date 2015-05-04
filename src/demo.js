@@ -58,7 +58,7 @@ function pieChart() {
     ];
 
     var ctx = document.getElementById("pieChart").getContext("2d");
-    new Chart(ctx).Pie(data);
+    var pieChart = new Chart(ctx).Pie(data);
 
-    legend(document.getElementById("pieLegend"), data);
+    legend(document.getElementById("pieLegend"), data, pieChart);
 }
