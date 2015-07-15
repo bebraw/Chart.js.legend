@@ -5,6 +5,7 @@ function main() {
     lineChart();
     pieChart();
     doughnutChart();
+    doughnutChartWithCustomLegend();
 }
 
 function lineChart() {
@@ -87,4 +88,31 @@ function doughnutChart() {
     var doughnutChart = new Chart(ctx).Doughnut(data);
 
     legend(document.getElementById("doughnutLegend"), data, doughnutChart);
+}
+
+
+
+function doughnutChartWithCustomLegend() {
+    var data = [
+        {
+            value: 40,
+            color:"#F38630",
+            label: 'Chocolate'
+        },
+        {
+            value : 20,
+            color : "#E0E4CC",
+            label: 'Floor'
+        },
+        {
+            value : 30,
+            color : "#69D2E7",
+            label: 'Butter'
+        }
+    ];
+
+    var ctx = document.getElementById("doughnutChartWithCustomLegend").getContext("2d");
+    var doughnutChartWithCustomLegend = new Chart(ctx).Doughnut(data,{tooltipTemplate:"<%=label%>: <%=value%>g"});
+
+    legend(document.getElementById("doughnutChartCustomLegend"), data, doughnutChartWithCustomLegend, "<%=label%>: <%=value%>g");
 }
