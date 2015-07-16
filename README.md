@@ -25,6 +25,7 @@ legend(document.getElementById('placeholder'), data);
 * [Antonin Bourguignon](https://github.com/abourguignon) - Make it easier to customize legend color samples
 * [Xu Ding](https://github.com/duskast) - IE8 and lower compatible version (`legend.legacy.js`)
 * [Alex Belloni](https://github.com/alexbelloni) - If a chart has tooltips, show legends there
+* [TLevasseur](https://github.com/TLevasseur) - Allow legends to be templated. Handy for formatting.
 
 ## License
 
