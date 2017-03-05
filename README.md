@@ -1,3 +1,5 @@
+**DEPRECATED** Please use the official [Chart.js legend](http://www.chartjs.org/docs/#chart-configuration-legend-configuration) instead.
+
 # Chart.js.legend
 
 An implementation of legend widget for [Chart.js](https://github.com/nnnick/Chart.js).
